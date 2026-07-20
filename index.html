@@ -1,11 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfect Gentleman Barber Shop & Frisør | Sandnes</title>
+  <meta name="description"
+    content="Perfect Gentleman Barber Shop & Frisør in Sandnes. Men's haircuts, fades, beard trim, shaving and grooming at Langgata 45." />
+  <meta name="theme-color" content="#11100d" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://perfectgentleman.no/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Perfect Gentleman Barber Shop & Frisør" />
+  <meta property="og:description" content="Men's haircuts, fades, beard trim and shaving in Sandnes." />
+  <meta property="og:image" content="assets/logo.jpg" />
+  <meta property="og:url" content="https://perfectgentleman.no/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="Perfect Gentleman Barber Shop & Frisør" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Perfect Gentleman Barber Shop & Frisør" />
+  <meta name="twitter:description" content="Men's haircuts, fades, beard trim and shaving in Sandnes." />
+  <meta name="twitter:image" content="assets/logo.jpg" />
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://perfectgentleman.no/en/" />
+  <link rel="alternate" hreflang="nb" href="https://perfectgentleman.no/" />
+  <link rel="alternate" hreflang="x-default" href="https://perfectgentleman.no/" />
+
+  <!-- DNS prefetch / preconnect -->
+  <link rel="dns-prefetch" href="//maps.google.com" />
+  <link rel="dns-prefetch" href="//www.facebook.com" />
+  <link rel="dns-prefetch" href="//www.instagram.com" />
+  <link rel="preconnect" href="https://maps.google.com" />
+  <link rel="preconnect" href="https://www.facebook.com" />
+  <link rel="preconnect" href="https://www.instagram.com" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://perfectgentleman.no/#business",
+    "name": "Perfect Gentleman Barber Shop & Frisør",
+    "image": "assets/full_logo.jpg",
+    "url": "https://perfectgentleman.no/",
+    "telephone": "+4745662724",
+    "email": "",
+    "priceRange": "100-400 NOK",
+    "description": "Men's haircuts, fades, beard trim, shaving and grooming in Sandnes.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Langgata 45",
+      "addressLocality": "Sandnes",
+      "addressRegion": "Rogaland",
+      "postalCode": "4306",
+      "addressCountry": "NO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 58.8519,
+      "longitude": 5.7352
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "10:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "", "closes": "" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "159",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.facebook.com/perfectgentleman.no/",
+      "https://www.instagram.com/perfect_gentleman_sandnes/"
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
+  <link rel="preload" as="image" href="assets/full_logo.jpg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <h1>Hello World! perfectgentleman.no</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Perfect Gentleman home">
+        <img src="assets/logo%20with%20text.jpg" alt="Perfect Gentleman logo" width="200" height="60" loading="eager" />
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="language-selector" aria-label="Language selector">
+        <button class="language-button" type="button" data-lang="en" aria-label="Switch to English">
+          <img src="assets/uk.png" alt="English" width="24" height="16" loading="eager" />
+          <span>EN</span>
+        </button>
+        <button class="language-button" type="button" data-lang="no" aria-label="Switch to Norwegian">
+          <img src="assets/no.png" alt="Norsk" width="24" height="16" loading="eager" />
+          <span>NO</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Barber shop in Sandnes</p>
+          <h1 data-i18n="hero.title">Sharp cuts. Clean fades. Professional grooming.</h1>
+          <p class="hero-text" data-i18n="hero.text">Perfect Gentleman is a men-focused barber shop in the heart of
+            Sandnes, offering classic haircuts, modern fades, beard care and traditional shaving.</p>
+          <div class="hero-actions">
+            <!--<a class="button button-primary" href="tel:+4745662724" data-i18n="hero.call">Call +47 45 66 27 24</a>
+            <a class="button button-secondary" href="#booking" data-i18n="hero.booking">Booking placeholder</a>-->
+          </div>
+          <div class="trust-strip" aria-label="Google rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><strong data-config="rating">4.8</strong>/5</span>
+            <span data-config="reviews">159 Google reviews</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal delay-1 hide-on-mobile">
+          <div class="hero-card">
+            <img class="hero-logo" src="assets/full_logo.jpg" alt="Perfect Gentleman full logo" width="100" height="150" loading="eager" fetchpriority="high" />
+            <img class="hero-photo" src="assets/barbers-at-work.webp" alt="Barbers working inside Perfect Gentleman" width="400" height="300" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="info-band">
+      <div class="container info-band-grid">
+        <div>
+          <span data-i18n="info.addressLabel">Address</span>
+          <strong>Langgata 45, Sandnes</strong>
+        </div>
+        <div>
+          <span data-i18n="info.phoneLabel">Phone</span>
+          <strong><a href="tel:+4745662724">+47 45 66 27 24</a></strong>
+        </div>
+        <div>
+          <span data-i18n="info.todayLabel">Opening hours</span>
+          <strong data-i18n="info.hoursShort">Mon-Fri 10:00-18:00
+            <br>Lørdag 10:00-17:00
+          </strong>
+        </div>
+      </div>
+    </section>-->
+
+
+
+    <section class="section-pad" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 data-i18n="services.title">Prices</h2>
+          <p data-i18n="services.text">Clear pricing for essential barber and grooming services.</p>
+        </div>
+        <div class="price-grid reveal delay-1" id="priceGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-pad section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Visit</p>
+          <h2 data-i18n="contact.title">Contact and opening hours</h2>
+          <div class="contact-list">
+            <p><span data-i18n="contact.address">Address</span><strong><a
+                  href="https://maps.app.goo.gl/utkWQBapg1sckWcVA" target="_blank" rel="noopener">Langgata 45,
+                  Sandnes</a></strong></p>
+            <p><span data-i18n="contact.phone">Phone</span><strong><a href="tel:+4745662724">+47 45 66 27
+                  24</a></strong></p>
+            <p><span>Facebook</span><strong><a href="https://www.facebook.com/perfectgentleman.no/" target="_blank"
+                  rel="noopener">perfectgentleman.no</a></strong></p>
+            <p><span>Instagram</span><strong><a href="https://www.instagram.com/perfect_gentleman_sandnes/"
+                  target="_blank" rel="noopener">@perfect_gentleman_sandnes</a></strong></p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="tel:+4745662724" data-i18n="contact.call">Call salon</a>
+            <a class="button button-secondary" href="https://maps.app.goo.gl/utkWQBapg1sckWcVA" target="_blank"
+              rel="noopener" data-i18n="contact.map">Open map</a>
+          </div>
+        </div>
+        <div class="hours-card reveal delay-1">
+          <h3 data-i18n="hours.title">Opening hours</h3>
+          <div id="hoursList" class="hours-list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-pad section-alt" id="about">
+      <div class="container about-grid">
+          <div class="about-media reveal hide-on-mobile">
+          <img src="assets/studio-empty-chairs.webp" alt="Perfect Gentleman barber shop interior" width="600" height="400" loading="lazy" />
+        </div>
+        <div class="about-copy reveal delay-1">
+          <p class="eyebrow" data-i18n="about.eyebrow">About Perfect Gentleman</p>
+          <h2 data-i18n="about.title">Men's grooming in the heart of Sandnes.</h2>
+          <p data-i18n="about.p1">Perfect Gentleman Barber Shop & Frisør is located at Langgata 45 and focuses on
+            quality, comfort and consistent service for men of all ages.</p>
+          <p data-i18n="about.p2">The team offers classic men's haircuts, modern styles, fades, beard trims and
+            traditional shaving in a relaxed barbershop setting.</p>
+          <p data-i18n="about.p3">The salon welcomes both Norwegian and international customers, with a direct and
+            friendly approach to every appointment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section-pad" id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="gallery.eyebrow">Gallery</p>
+          <h2 data-i18n="gallery.title">Inside the shop</h2>
+          <p data-i18n="gallery.text">A simple collage area for photos from the studio, chairs, entrance and daily work.
+          </p>
+        </div>
+        <div class="gallery-grid reveal delay-1">
+          <figure class="gallery-item gallery-large">
+            <img src="assets/barbers-at-work.webp" alt="Barbers working in the studio" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/outside-entrance-1.JPG" alt="Outside entrance" />
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="assets/studio-empty-chairs.webp" alt="Empty studio with chairs" />
+          </figure>
+        </div>
+      </div>
+    </section>-->
+
+    <section class="section-pad section-alt" id="reviews">
+      <div class="container reviews-grid">
+        <div class="review-copy reveal">
+          <p class="eyebrow" data-i18n="reviews.eyebrow">Google profile</p>
+          <h2 data-i18n="reviews.title">Trusted locally in Sandnes.</h2>
+          <p data-i18n="reviews.text">Showcase the Google profile clearly without relying on fragile scraping. The
+            button opens the live Google business page.</p>
+          <a class="button button-primary" id="googlePageLink" href="https://share.google/YpfbjD3df5ppKz8mH"
+            target="_blank" rel="noopener" data-i18n="reviews.button">View Google profile</a>
+        </div>
+        <div class="google-card reveal delay-1">
+            <div class="google-card-top">
+            <img src="assets/logo.jpg" alt="Perfect Gentleman logo" width="60" height="60" loading="lazy" />
+            <div>
+              <strong>Perfect Gentleman</strong>
+              <span data-i18n="reviews.category">Barber shop & Frisør</span>
+            </div>
+          </div>
+          <div class="rating-display">
+            <strong data-config="ratingLarge">4.8</strong>
+            <div>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <p><span data-config="reviewsPlain">159</span> <span data-i18n="reviews.reviewLabel">Google reviews</span>
+              </p>
+            </div>
+          </div>
+          <!-- <p class="review-note" data-i18n="reviews.note">Rating and review count can be updated in site-config.js.</p> -->
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section-pad" id="booking">
+      <div class="container booking-card reveal">
+        <div>
+          <p class="eyebrow" data-i18n="booking.eyebrow">Booking</p>
+          <h2 data-i18n="booking.title">Booking integration placeholder</h2>
+          <p data-i18n="booking.text">This area is ready for a booking link, embedded booking widget or third-party
+            booking system when needed.</p>
+        </div>
+        <a class="button button-secondary" id="bookingAction" href="tel:+4745662724" data-i18n="booking.button">Call to
+          book for now</a>
+      </div>
+    </section>-->
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Perfect Gentleman Barber Shop & Frisør</p>
+      <p><a href="https://infinitycrown.no/" target="_blank" rel="noopener" data-i18n="nav.footer">Made by INFINITY CROWN</a></p>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
