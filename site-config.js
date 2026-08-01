@@ -7,7 +7,7 @@ window.PG_SITE_CONFIG = {
   customCursorEnabled: false,
   googlePageUrl: "https://share.google/YpfbjD3df5ppKz8mH",
   googleRating: 4.8,
-  googleReviewCount: 159,
+  googleReviewCount: 165,
   booking: {
     enabled: false,
     providerName: "",
