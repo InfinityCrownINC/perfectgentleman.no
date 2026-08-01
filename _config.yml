@@ -1,0 +1,12 @@
+# GitHub Pages configuration for Perfect Gentleman
+# This is a static site with no Jekyll processing needed.
+# Setting this to empty prevents GitHub Pages from treating it as a Jekyll site.
+
+# Disable Jekyll processing entirely
+exclude:
+  - README.md
+  - CNAME.txt
+
+# Keep the site as plain static files
+include:
+  - .nojekyll

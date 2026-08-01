@@ -63,13 +63,15 @@ const content = {
       address: "Address",
       phone: "Phone",
       call: "Call salon",
-      map: "Open map"
+      map: "Open map",
+      dropIn: "Drop in only"
     },
     hours: {
-      title: "Opening hours"
+      title: "Opening hours",
+      holidays: 'Closed on <a href="https://www.norskkalender.no/" target="_blank" rel="noopener">public holidays</a>'
     },
     prices: [
-      { name: "Men's haircut", price: "400" },
+      { name: "Men", price: "400" },
       { name: "Fade", price: "400" },
       { name: "Senior", price: "350" },
       { name: "Child", price: "350" },
@@ -149,10 +151,12 @@ const content = {
       address: "Adresse",
       phone: "Telefon",
       call: "Ring salongen",
-      map: "Åpne kart"
+      map: "Åpne kart",
+      dropIn: "Kun Drop-in"
     },
     hours: {
-      title: "Åpningstider"
+      title: "Åpningstider",
+      holidays: 'Stengt på <a href="https://www.norskkalender.no/" target="_blank" rel="noopener">offentlige helligdager</a>'
     },
     prices: [
       { name: "Herrer", price: "400" },
@@ -180,7 +184,12 @@ const state = {
 };
 
 function getInitialLanguage() {
-  const saved = localStorage.getItem("pg-language");
+  let saved = null;
+  try {
+    saved = localStorage.getItem("pg-language");
+  } catch (e) {
+    // localStorage unavailable (private mode, blocked cookies) — fall back to config
+  }
   const configured = CONFIG.defaultLanguage === "no" ? "no" : "en";
   return saved === "en" || saved === "no" ? saved : configured;
 }
@@ -191,12 +200,16 @@ function translate(path, lang = state.language) {
 
 function applyLanguage(lang) {
   state.language = lang;
-  localStorage.setItem("pg-language", lang);
+  try {
+    localStorage.setItem("pg-language", lang);
+  } catch (e) {
+    // Ignore — language still applies for this session
+  }
   document.documentElement.lang = lang === "no" ? "no" : "en";
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const value = translate(node.dataset.i18n, lang);
-    if (value) node.textContent = value;
+    if (value) node.innerHTML = value;
   });
 
   document.querySelectorAll(".language-button").forEach((button) => {
@@ -208,6 +221,7 @@ function applyLanguage(lang) {
   renderPrices(lang);
   renderHours(lang);
   configureBooking(lang);
+  updateActiveNav();
 }
 
 function renderPrices(lang) {
@@ -311,22 +325,61 @@ function setupLanguageButtons() {
   });
 }
 
+function updateActiveNav() {
+  const sections = ["services", "about", "gallery", "contact"];
+  const navLinks = document.querySelectorAll(".main-nav a");
+
+  navLinks.forEach((link) => link.removeAttribute("aria-current"));
+
+  const current = sections.find((id) => {
+    const el = document.getElementById(id);
+    if (!el) return false;
+    const rect = el.getBoundingClientRect();
+    return rect.top <= 120 && rect.bottom >= 120;
+  });
+
+  if (current) {
+    const activeLink = document.querySelector(`.main-nav a[href="#${current}"]`);
+    if (activeLink) activeLink.setAttribute("aria-current", "true");
+  }
+}
+
 function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+  const AMP = String.fromCharCode(38);   // &
+  const LT = String.fromCharCode(60);    // <
+  const GT = String.fromCharCode(62);    // >
+  const QUOT = String.fromCharCode(34);  // "
+  const APOS = String.fromCharCode(39);  // '
+  const map = {
+    [AMP]: AMP + "amp;",
+    [LT]: LT + "t;",
+    [GT]: GT + "t;",
+    [QUOT]: QUOT + "quot;",
+    [APOS]: APOS + "#039;"
+  };
+  return String(value).replace(/[&<>"']/g, (ch) => map[ch]);
 }
 
 function init() {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   setupCustomCursor();
   setupLanguageButtons();
   configureRatings();
   applyLanguage(state.language);
   setupRevealAnimation();
+  updateActiveNav();
+
+  if ("IntersectionObserver" in window) {
+    const navObserver = new IntersectionObserver(updateActiveNav, {
+      rootMargin: "-120px 0px -60% 0px",
+      threshold: 0
+    });
+    ["services", "about", "gallery", "contact"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) navObserver.observe(el);
+    });
+  }
 }
 
 init();

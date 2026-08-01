@@ -1,65 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Perfect Gentleman</title>
-    
-    <!-- This tag handles the automatic redirect -->
-    <!-- "content=5" means it will wait 5 seconds before redirecting -->
-    <meta http-equiv="refresh" content="10;url=https://perfectgentleman.no/">
-    
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fcfcfc;
-            color: #333333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 5rem;
-            margin: 0;
-            color: #1a1a1a;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin: 10px 0 20px;
-            font-weight: normal;
-        }
-        p {
-            font-size: 1rem;
-            color: #555555;
-            margin-bottom: 20px;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-        a:hover {
-            background-color: #444444;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#11100d" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>404 - Page Not Found | Perfect Gentleman Barber Shop & Frisør</title>
+  <meta name="description" content="The page you are looking for could not be found. Return to Perfect Gentleman Barber Shop & Frisør in Sandnes." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://perfectgentleman.no/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="404 - Page Not Found | Perfect Gentleman" />
+  <meta property="og:description" content="The page you are looking for could not be found. Return to Perfect Gentleman Barber Shop & Frisør in Sandnes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://perfectgentleman.no/404.html" />
+  <meta property="og:site_name" content="Perfect Gentleman Barber Shop & Frisør" />
+  <meta property="og:locale" content="nb_NO" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png" />
+  <link rel="manifest" href="assets/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#11100d" />
+  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png" />
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml" />
+
+  <style>
+    :root {
+      --bg: #11100d;
+      --bg-card: #201d18;
+      --paper: #f7f0e6;
+      --muted: #b8ad9e;
+      --gold: #c79a43;
+      --gold-soft: #ead7ad;
+      --line: rgba(247, 240, 230, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(199, 154, 67, 0.14), transparent 34rem), var(--bg);
+      color: var(--paper);
+      line-height: 1.6;
+    }
+
+    .error-card {
+      max-width: 560px;
+      width: 100%;
+      padding: 48px 36px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .error-code {
+      margin: 0;
+      font-size: clamp(4rem, 14vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+      color: var(--gold-soft);
+      font-weight: 900;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold-soft);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .countdown {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #15120d;
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--paper);
+    }
+
+    @media (max-width: 480px) {
+      .error-card {
+        padding: 36px 22px;
+      }
+      .actions {
+        flex-direction: column;
+      }
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="error-card">
+    <p class="eyebrow">Perfect Gentleman Barber Shop & Frisør</p>
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1>Page not found</h1>
+    <p>Ka du holde på med? The page you are looking for doesn't exist or has been moved. You will be redirected to the homepage in <span class="countdown" id="countdown">8</span> seconds.</p>
+    <div class="actions">
+      <a class="button button-primary" href="https://perfectgentleman.no/">Return to Homepage</a>
+      <a class="button button-secondary" href="tel:+4745662724">Call the salon</a>
+    </div>
+  </main>
 
-    <h1>404</h1>
-    <h2>Ka du holde på med?</h2>
-    <p>You will be redirected to the homepage in 10 seconds...</p>
-    
-    <!-- Fallback link in case the automatic redirect doesn't trigger -->
-    <a href="https://perfectgentleman.no/">Return to Homepage</a>
-
+  <script>
+    (function () {
+      var seconds = 8;
+      var el = document.getElementById("countdown");
+      var timer = setInterval(function () {
+        seconds -= 1;
+        if (el) el.textContent = String(seconds);
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = "https://perfectgentleman.no/";
+        }
+      }, 1000);
+    })();
+  </script>
 </body>
 </html>
