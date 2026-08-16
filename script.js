@@ -15,7 +15,7 @@ const content = {
       title: "Sharp cuts. Clean fades. Professional grooming.",
       text: "Perfect Gentleman is a men-focused barber shop in the heart of Sandnes, offering classic haircuts, modern fades, beard care and traditional shaving.",
       call: "Call +47 45 66 27 24",
-      booking: "Booking placeholder"
+      booking: "Drop in only"
     },
     info: {
       addressLabel: "Address",
@@ -103,7 +103,7 @@ const content = {
       title: "Skarpe klipp. Rene fades. Profesjonell grooming.",
       text: "Perfect Gentleman er en frisørsalong med fokus på menn i hjertet av Sandnes, med klassisk herreklipp, moderne fades, skjeggpleie og tradisjonell barbering.",
       call: "Ring +47 45 66 27 24",
-      booking: "Booking plassholder"
+      booking: "Kun Drop-in"
     },
     info: {
       addressLabel: "Adresse",

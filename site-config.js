@@ -12,5 +12,8 @@ window.PG_SITE_CONFIG = {
     enabled: false,
     providerName: "",
     bookingUrl: ""
+  },
+  hero: {
+    booking: "Booking placeholder"
   }
 };
